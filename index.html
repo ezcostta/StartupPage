@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Startup Page</title>
-    <script>
-        fetch('tabliss.json')
-            .then(response => response.json())
-            .then(settings => {
-                localStorage.setItem('tabliss.settings', JSON.stringify(settings));
-                window.location.href = "https://tabliss.io/";
-            });
-    </script>
+<script>
+    fetch('tabliss-config.json')
+        .then(response => response.json())
+        .then(settings => {
+            localStorage.setItem('tabliss.settings', JSON.stringify(settings));
+        })
+        .catch(error => console.error('Error loading settings:', error));
+</script>
 </head>
 <body>
     <h1>Loading Tabliss...</h1>
